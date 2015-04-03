@@ -199,8 +199,12 @@
             ;
           }
 
+          if (!stacked) {
+            yAxisMapping[index] = 0;
+          }
+
           // add the label
-          if (hasLabel) {
+          if (hasLabel && stacked) {
             gParent.append("text")
               .attr("class", "timeline-label")
               .attr("transform", "translate("+ 0 +","+ (itemHeight * 0.75 + margin.top + (itemHeight + itemMargin) * yAxisMapping[index])+")")
